@@ -1,5 +1,5 @@
 Nama Team : HebatAja
-//n Anggota :
+Anggota :
 1. Rizky Ardiansyah
 2. Ahmad Mirza Rafiq Azmi
 3. Pilemon Barimbing
