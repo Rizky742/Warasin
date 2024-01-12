@@ -1,11 +1,13 @@
 <h1 align="center">HebatAja</h1>
 <h2>Nama Team : HebatAja</h2>
 <h2>Nama Aplikasi : <span>Warasin</span></h2>
-Anggota :
-1. Rizky Ardiansyah
-2. Ahmad Mirza Rafiq Azmi
-3. Pilemon Barimbing
-4. I Nengah Sutha Dharmendra
+<h2>Anggota</h2>
+<ul>
+  <li>Rizky Ardiansyah</li>
+  <li>Ahmad Mirza Rafiq Azmi</li>
+  <li>Pilemon Barimbing</li>
+  <li>I Nengah Sutha Dharmendra</li>
+</ul>
 
 # Tampilan Aplikasi
 ![WhatsApp Image 2024-01-12 at 22 29 05](https://github.com/Rizky742/Warasin/assets/82031732/27289b33-3e22-4252-b063-7cb49f3f0c5e)
