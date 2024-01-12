@@ -1,6 +1,6 @@
 <h1 align="center">HebatAja</h1>
-Nama Team : HebatAja
-Nama Aplikasi : Warasin
+<h2>Nama Team : HebatAja</h2>
+<h2>Nama Aplikasi : <span>Warasin</span></h2>
 Anggota :
 1. Rizky Ardiansyah
 2. Ahmad Mirza Rafiq Azmi
