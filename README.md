@@ -1,4 +1,4 @@
-## HebatAja
+<h1 align="center">HebatAja</h1>
 Nama Team : HebatAja
 Nama Aplikasi : Warasin
 Anggota :
