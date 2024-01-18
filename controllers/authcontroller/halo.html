@@ -1,0 +1,74 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Private Chat</title>
+</head>
+<body>
+  <select id="targetUser">
+    <option value="">Pilih Pengguna</option>
+  </select>
+  <input type="text" id="messageInput" placeholder="Ketik pesan">
+  <button onclick="sendMessage()">Kirim</button>
+  <div id="chat"></div>
+
+  <script>
+    const socket = new WebSocket("ws://localhost:8080/ws");
+    const targetUserSelect = document.getElementById("targetUser");
+    const messageInput = document.getElementById("messageInput");
+    const chatDiv = document.getElementById("chat");
+
+    // Daftar pengguna
+    const userList = ["Alice", "Bob", "Charlie", "David"];
+
+    // Isi dropdown dengan daftar pengguna
+    updateTargetUsers(userList);
+
+    socket.onmessage = function (event) {
+      const message = event.data;
+      if (message.startsWith("@ListUsers:")) {
+        const users = message.substring(12).split(",");
+        updateTargetUsers(users);
+      } else {
+        const messageElement = document.createElement("p");
+        messageElement.textContent = message;
+        chatDiv.appendChild(messageElement);
+      }
+    };
+
+    socket.onopen = function (event) {
+      // Hubungkan ke server, minta daftar pengguna
+      socket.send("@ListUsers:");
+    };
+
+    socket.onclose = function (event) {
+      alert("Koneksi ditutup. Silakan segarkan halaman.");
+    };
+
+    function updateTargetUsers(users) {
+    //   targetUserSelect.innerHTML = "<option value='rizky'>rizky</option>";
+
+      users.forEach(function (user) {
+        const option = document.createElement("option");
+        option.value = user;
+        option.textContent = user;
+        targetUserSelect.appendChild(option);
+      });
+    }
+
+    function sendMessage() {
+      const targetUser = targetUserSelect.value;
+      const message = messageInput.value;
+
+      if (targetUser && message) {
+        socket.send("@" + targetUser + ":" + message);
+        messageInput.value = "";
+      } else {
+        alert("Pilih pengguna dan masukkan pesan.");
+      }
+    }
+  </script>
+</body>
+</html>
